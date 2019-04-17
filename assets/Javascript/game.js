@@ -1,20 +1,20 @@
 
 
-//Array of possible answers
+
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
 var guessedLetters = [];
 
 var letterToGuess = null;
 
-var guessLeft = 9;
+var guessesLeft = 9;
 
 var wins = 0
 var losses = 0
 
 var updateGuessesLeft = function () {
 
-    document.querySelector("#guess-left").innerHTML = guessLeft;
+    document.querySelector("#guesses-left").innerHTML = guessesLeft;
 
 };
 
@@ -26,7 +26,7 @@ var updateLetterToGuess = function () {
 
 var updateGuessesSoFar = function () {
 
-    Document.querySelector("#guesses-so-far").innerHTML = guessedLetters.join(",");
+    document.querySelector("#guesses-so-far").innerHTML = guessedLetters.join(",");
 
 };
 
@@ -61,7 +61,7 @@ document.onkeyup = function (event) {
 
         reset();
     }
-    if (guessLeft === 0) {
+    if (guessesLeft === 0) {
 
         losses++;
         document.querySelector("#losses").innerHTML = losses;
